@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="observer-example" basedir="." default="test">
+
+	<property file="${basedir}/build.properties"/>
+	
+	<path id="build.path">
+		<pathelement location="${lib.dir}/"/>
+	</path>
+	
+	<target name="init">
+		<echo message="${app.src.dir}"/>
+		<mkdir dir="${app.build.dir}"/>
+		<mkdir dir="${test.build.dir}"/>
+	</target>
+	
+	<target name="clean">
+		<delete dir="${app.build.dir}"/>
+		<delete dir="${test.build.dir}"/>
+	</target>
+	
+	<target name="compile" depends="init">
+		<javac 
+			srcdir="${app.src.dir}"
+			destdir="${app.build.dir}"
+			source="1.6"
+			target="1.6"
+			classpathref="build.path"/>
+			
+	</target>
+		
+	<target name="compile-tests" depends="compile">
+	
+	</target>
+	
+	<target name="test" depends="compile-tests">
+	
+	</target>
+	
+</project>

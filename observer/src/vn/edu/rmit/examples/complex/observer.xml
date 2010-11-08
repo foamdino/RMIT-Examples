@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="model" class="vn.edu.rmit.examples.complex.TemperatureModel"/>
+		
+	<bean id="c-view" class="vn.edu.rmit.examples.complex.CView">
+		<constructor-arg name="h" value="100"/>
+		<constructor-arg name="v" value="250"/>
+		<property name="model" ref="model" />
+	</bean>
+	
+	<bean id="f-view" class="vn.edu.rmit.examples.complex.FView">
+		<constructor-arg name="h" value="100"/>
+		<constructor-arg name="v" value="100"/>
+		<property name="model" ref="model" />
+	</bean>
+	
+	<bean id="slider-view" class="vn.edu.rmit.examples.complex.SliderView">
+		<constructor-arg name="h" value="50"/>
+		<constructor-arg name="v" value="250"/>
+		<property name="model" ref="model" />
+	</bean>
+	
+	<bean id="therm-view" class="vn.edu.rmit.examples.complex.ThermView">
+		<property name="model" ref="model" />
+		<property name="gauge" ref="gauge" />
+		<property name="canvas" ref="canvas"/>
+	</bean>
+	
+	<bean id="gauge" class="vn.edu.rmit.examples.complex.TempGauge">
+		<!-- constructor injection of min/max -->
+		<constructor-arg name="min" value="-200"/>
+		<constructor-arg name="max" value="300"/>
+	</bean>
+	
+	<bean id="canvas" class="vn.edu.rmit.examples.complex.TemperatureCanvas">
+		<property name="gauge" ref="gauge"/>
+	</bean>
+</beans>

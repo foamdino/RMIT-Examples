@@ -1,0 +1,10 @@
+This code example is based on the code provided at:
+
+http://csis.pace.edu/~bergin/mvc/mvcgui.html
+
+by Joseph Bergin (jbergin@pace.edu), Pace University
+with contributions from others.
+
+It has been refactored, replacing AWT with Swing and using Spring.
+
+It now includes unit tests and a build file
