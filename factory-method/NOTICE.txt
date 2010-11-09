@@ -1,0 +1,1 @@
+Example code based on the sources in Head First Design Patterns
