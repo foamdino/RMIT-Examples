@@ -1,3 +1,8 @@
 These examples are designed to show design patterns in their simplest form.
 
 Each example is independent and comes with an eclipse project and classpath file for easy setup.
+
+There are now J2EE examples alongside the design pattern examples.
+
+* Design pattern examples come with eclipse project files
+* J2EE examples come with netbeans project files
