@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar version="2.1" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd">
+    <enterprise-beans>
+        <session>
+            <display-name>BeanOneSB</display-name>
+            <ejb-name>BeanOne</ejb-name>
+            <local-home>vn.edu.rmit.examples.BeanOneLocalHome</local-home>
+            <local>vn.edu.rmit.examples.BeanOneLocal</local>
+            <ejb-class>vn.edu.rmit.examples.BeanOne</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
+        <session>
+            <display-name>BeanTwoSB</display-name>
+            <ejb-name>BeanTwo</ejb-name>
+            <home>vn.edu.rmit.examples.BeanTwoRemoteHome</home>
+            <remote>vn.edu.rmit.examples.BeanTwoRemote</remote>
+            <ejb-class>vn.edu.rmit.examples.BeanTwo</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+            <ejb-local-ref>
+                <ejb-ref-name>ejb/BeanOneLocalHome</ejb-ref-name>
+                <ejb-ref-type>Session</ejb-ref-type>
+                <local-home>vn.edu.rmit.examples.BeanOneLocalHome</local-home>
+                <local>vn.edu.rmit.examples.BeanOneLocal</local>
+                <ejb-link>BeanOne</ejb-link>
+            </ejb-local-ref>
+        </session>
+    </enterprise-beans>
+    <assembly-descriptor>
+        <container-transaction>
+            <method>
+                <ejb-name>BeanOne</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>BeanTwo</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+    </assembly-descriptor>
+</ejb-jar>
