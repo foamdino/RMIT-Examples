@@ -1,0 +1,1 @@
+insert into product(id, product_name, price) values(1, 'amazon kindle', 99.99)

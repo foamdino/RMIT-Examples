@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sun-cmp-mappings>
+  <sun-cmp-mapping>
+    <schema>KEV_cmp-entity-bean-example</schema>
+    <entity-mapping>
+      <ejb-name>Product</ejb-name>
+      <table-name>PRODUCT</table-name>
+      <cmp-field-mapping>
+        <field-name>id</field-name>
+        <column-name>PRODUCT.ID</column-name>
+        <fetched-with>
+          <default/>
+        </fetched-with>
+      </cmp-field-mapping>
+      <cmp-field-mapping>
+        <field-name>productName</field-name>
+        <column-name>PRODUCT.PRODUCT_NAME</column-name>
+        <fetched-with>
+          <default/>
+        </fetched-with>
+      </cmp-field-mapping>
+      <cmp-field-mapping>
+        <field-name>price</field-name>
+        <column-name>PRODUCT.PRICE</column-name>
+        <fetched-with>
+          <default/>
+        </fetched-with>
+      </cmp-field-mapping>
+    </entity-mapping>
+  </sun-cmp-mapping>
+</sun-cmp-mappings>
