@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sun-ejb-jar PUBLIC "-//Sun Microsystems, Inc.//DTD Application Server 8.1 EJB 2.1//EN" "http://www.sun.com/software/appserver/dtds/sun-ejb-jar_2_1-1.dtd">
+<sun-ejb-jar>
+  <enterprise-beans>
+    <ejb>
+      <ejb-name>MovieManager</ejb-name>
+      <jndi-name>ejb/MovieManager</jndi-name>
+    </ejb>
+    <ejb>
+      <ejb-name>Actor</ejb-name>
+      <resource-ref>
+        <res-ref-name>moviedb</res-ref-name>
+        <jndi-name>moviedb</jndi-name>
+      </resource-ref>
+    </ejb>
+    <ejb>
+      <ejb-name>Movie</ejb-name>
+      <resource-ref>
+        <res-ref-name>moviedb</res-ref-name>
+        <jndi-name>moviedb</jndi-name>
+      </resource-ref>
+    </ejb>
+    <cmp-resource>
+      <jndi-name>moviedb</jndi-name>
+    </cmp-resource>
+  </enterprise-beans>
+</sun-ejb-jar>
