@@ -2,7 +2,7 @@ package vn.edu.rmit.examples;
 
 public class D200CoinHandler implements Handler {
 
-	Handler successor = new D500CoinHandler();
+	private Handler successor = new D500CoinHandler();
 	
 	public boolean handle(Coin c) {
 		if(c instanceof D200Coin ) {
