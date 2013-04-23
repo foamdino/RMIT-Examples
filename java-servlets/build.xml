@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<project name="sadi-servlet" default="war" basedir=".">
+
+    <property file="build.properties"/>
+
+    <path id="lib.path.ref">
+        <fileset dir="${lib.dir}" includes="*.jar"/>
+    </path>
+
+    <target name="clean">
+        <delete dir="${dest.dir}"/>
+        <delete dir="${build.dir}"/>
+        <mkdir dir="${dest.dir}"/>
+        <mkdir dir="${build.dir}"/>
+    </target>
+
+    <target name="compile" depends="clean">
+        <javac srcdir="${src.dir}"
+               destdir="${dest.dir}"
+               classpathref="lib.path.ref"/>
+    </target>
+
+    <target name="war" depends="compile">
+
+        <war destfile="${build.dir}/sadi-servlet.war"
+             webxml="${basedir}/WEB-INF/web.xml">
+            <!--<lib dir="thirdparty/libs">-->
+                <!--<exclude name="jdbc1.jar"/>-->
+            <!--</lib>-->
+            <classes dir="${dest.dir}"/>
+        </war>
+    </target>
+
+</project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+    <display-name>SADI Example</display-name>
+
+    <!-- Declare the existence of a servlet. -->
+    <servlet>
+        <servlet-name>SadiServlet</servlet-name>
+        <servlet-class>vn.edu.rmit.sadi.SadiServlet</servlet-class>
+    </servlet>
+
+    <!-- Map URLs to that servlet. -->
+    <servlet-mapping>
+        <servlet-name>SadiServlet</servlet-name>
+        <url-pattern>/sadi-servlet</url-pattern>
+    </servlet-mapping>
+</web-app>
