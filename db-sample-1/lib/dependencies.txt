@@ -1,0 +1,16 @@
+The following are required to compile:
+- commons-dbcp-1.4.jar
+- commons-logging-adapters-1.1.2.jar
+- commons-logging-api-1.1.2.jar
+- commons-pool-1.6.jar
+- spring-beans-3.2.2.RELEASE.jar
+- spring-context-3.2.2.RELEASE.jar
+- spring-context-support-3.2.2.RELEASE.jar
+- spring-core-3.2.2.RELEASE.jar
+- spring-expression-3.2.2.RELEASE.jar
+- spring-jdbc-3.2.2.RELEASE.jar
+- spring-test-3.2.2.RELEASE.jar
+- spring-tx-3.2.2.RELEASE.jar
+- sqlite-jdbc-3.7.2.jar
+
+(and yes I know about mvn, but it isn't used here)

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <!-- need to define this bean so that the unit tests rollback correctly -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.sqlite.JDBC" />
+        <property name="url" value="jdbc:sqlite:messages-test.db" />
+        <property name="initialSize" value="1" />
+        <property name="maxActive" value="1" />
+        <property name="maxIdle" value="1" />
+        <property name="poolPreparedStatements" value="true" />
+    </bean>
+
+    <bean id="dbUtil" class="vn.edu.rmit.sadi.DbUtil">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="dao" class="vn.edu.rmit.sadi.MessageDaoImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+</beans>
